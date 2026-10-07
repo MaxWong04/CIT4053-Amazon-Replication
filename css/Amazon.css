@@ -306,3 +306,82 @@ body {
   font-weight: bold;
   margin: 0; /* Box model: removes default paragraph margin */
 }
+/* =========================================
+   Block 6: Footer
+   ========================================= */
+
+/* Footer background: full width, dark background color */
+.footer-bg {
+  width: 100%;
+  background-color: #232f3e; /* Amazon's secondary dark blue */
+  color: white;
+}
+
+/* Back to top section: full width, slightly lighter background, centered content */
+.back-to-top-section {
+  width: 100%;
+  background-color: #37475a; /* Lighter dark blue for contrast */
+  text-align: center; /* Text and appearance: centers the inline link */
+  padding: 15px 0; /* Box model: vertical spacing */
+}
+
+/* Back to top link: text styling and hover effect */
+.back-to-top-link {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.back-to-top-link:hover {
+  text-decoration: underline; /* Pseudo-class selector: visual feedback */
+}
+
+/* Footer content: fixed width, centered horizontally, holds floated columns */
+.footer-content {
+  width: 1500px;
+  margin: 0 auto; /* Box model: horizontal centering (Required by assignment) */
+  padding: 40px 0; /* Box model: vertical spacing for the content area */
+}
+
+/* Footer column: floated left, fixed width for 4 columns layout */
+.footer-column {
+  float: left; /* Layout method: horizontal arrangement using float */
+  width: 350px; /* Box model: fixed width (350 * 4 = 1400px, fits within 1500px) */
+  margin-right: 33px; /* Box model: horizontal spacing between columns */
+}
+
+/* Remove right margin from the 4th column to prevent wrapping */
+.footer-column:last-child {
+  margin-right: 0; /* Box model: removes extra margin on the final column */
+}
+
+/* Column heading: text styling */
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px; /* Box model: spacing below the heading */
+}
+
+/* Column list: remove default bullets and margins */
+.footer-column ul {
+  list-style: none; /* Text and appearance: removes default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Column list item: vertical spacing */
+.footer-column li {
+  margin-bottom: 10px; /* Box model: vertical spacing between links */
+}
+
+/* Column link: text styling and hover effect */
+.footer-column a {
+  color: #dddddd; /* Light gray text for readability on dark background */
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-column a:hover {
+  text-decoration: underline; /* Pseudo-class selector: visual feedback */
+  color: white;
+}
