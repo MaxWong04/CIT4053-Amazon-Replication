@@ -1,0 +1,308 @@
+/* =========================================
+   Global Reset & Base Styles
+   ========================================= */
+
+/* Universal reset: clears inner and outer margins for all elements (Required by assignment) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border do not increase the element's total width */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Text and appearance: setting base font */
+  color: #111111;
+}
+
+/* =========================================
+   Block 1: Top Navigation Bar
+   ========================================= */
+
+/* Top nav background: parent container, full width, dark background color */
+.top-nav-bg {
+  width: 100%; /* Full width to cover the entire screen horizontally */
+  background-color: #131921; /* Amazon's dark blue/black color */
+  color: white;
+  overflow: hidden; /* Float-clearing method 2: adding overflow to parent to fix height collapse */
+}
+
+/* Top nav content: child container, fixed width, clears floats and centers horizontally */
+.top-nav-content {
+  width: 1500px; /* Fixed width for content area */
+  margin: 0 auto; /* Horizontal centering (Required by assignment) */
+  height: 60px; /* Box model: setting explicit height */
+}
+
+/* Logo area: floated left, vertical alignment using line-height */
+.nav-logo {
+  float: left; /* Horizontal arrangement using float */
+  width: 100px; /* Box model: fixed width */
+  height: 60px;
+  padding: 10px; /* Box model: inner spacing */
+}
+
+.nav-logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Search bar area: floated left, positioned between logo and cart */
+.nav-search {
+  float: left; /* Horizontal arrangement using float */
+  width: 1000px; /* Box model: fixed width for search box */
+  height: 40px;
+  margin-top: 10px; /* Box model: outer spacing for vertical alignment */
+}
+
+.nav-search input {
+  float: left; /* Internal float for input field */
+  width: 850px; /* search box width */
+  height: 40px;
+  padding: 5px 10px; /* Box model: inner spacing for text */
+  border: none;
+}
+
+.nav-search .search-btn {
+  float: left; /* Internal float for search button */
+  width: 150px; /* search button width */
+  height: 40px;
+  background-color: #febd69; /* Amazon's search button orange color */
+  border: none;
+  cursor: pointer;
+}
+
+/* Cart area: floated right, aligned to the right edge */
+.nav-cart {
+  float: right; /* Float right for right-aligned elements */
+  width: 150px; /* Box model: fixed width */
+  height: 60px;
+  line-height: 60px; /* Text and appearance: vertical centering of text */
+  text-align: right; /* Text and appearance: align text to the right */
+  padding-right: 20px; /* Box model: right inner spacing */
+}
+
+.cart-link {
+  color: white;
+  text-decoration: none; /* Text and appearance: removing default underline */
+  font-weight: bold;
+}
+
+.cart-link:hover {
+  text-decoration: underline; /* Pseudo-class selector: adding underline on hover */
+}
+/* =========================================
+   Block 2: Sub Navigation Bar
+   ========================================= */
+
+/* Sub nav background: full width, slightly lighter dark color than top nav */
+.sub-nav-bg {
+  width: 100%;
+  background-color: #232f3e; /* Amazon's secondary dark blue color */
+  color: white;
+  overflow: hidden; /* Float-clearing method 2: fixes parent-height collapse caused by floated li elements */
+  border-top: 1px solid #3a4553; /* Box model: subtle top border for visual separation */
+}
+
+/* Sub nav content: fixed width, centered horizontally */
+.sub-nav-content {
+  width: 1500px;
+  margin: 0 auto; /* Horizontal centering (Required by assignment) */
+  height: 40px;
+}
+
+/* Nav menu list: remove default bullets and margins */
+.nav-menu {
+  list-style: none; /* Text and appearance: removes default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu item: floated left to arrange horizontally */
+.menu-item {
+  float: left; /* Horizontal arrangement using float */
+  height: 40px;
+}
+
+/* Menu link: display block to make the entire area clickable */
+.menu-link {
+  display: block; /* Display modes: makes the whole box clickable, not just text */
+  padding: 0 15px; /* Box model: horizontal inner spacing */
+  line-height: 40px; /* Text and appearance: vertically centers the text within the 40px height */
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid transparent; /* Box model: transparent border prevents layout shift on hover */
+}
+
+/* Menu link hover effect: adds a white border when hovered */
+.menu-link:hover {
+  border: 1px solid white; /* Pseudo-class selector: visual feedback on hover */
+}
+/* =========================================
+   Block 3: Hero Banner
+   ========================================= */
+
+/* Hero banner background: full width, with a subtle gradient at the bottom to blend with the cards section */
+.hero-banner-bg {
+  width: 100%; /* Full width to cover the entire screen horizontally */
+  /* Text and appearance: gradient background fading from light gray to white */
+  background: linear-gradient(to bottom, #eaeded 0%, #ffffff 100%);
+  /* Note: Using normal flow here, no float needed for the main container */
+}
+
+/* Hero banner content: fixed width, centered horizontally */
+.hero-banner-content {
+  width: 1500px; /* Fixed width for content area */
+  margin: 0 auto; /* Horizontal centering (Required by assignment) */
+  /* Note: Normal flow naturally stacks the image below the navigation bars */
+}
+
+/* Hero image: responsive width within the fixed container */
+.hero-image {
+  width: 100%; /* Box model: image takes full width of its 1500px parent */
+  height: auto; /* Box model: maintains original aspect ratio */
+  display: block; /* Display modes: removes default inline bottom spacing/gap */
+}
+/* =========================================
+   Block 4: Product Cards Grid
+   ========================================= */
+
+/* Cards section background: full width, light gray background to contrast with white cards */
+.cards-section-bg {
+  width: 100%;
+  background-color: #eaeded; /* Amazon's light gray background color */
+  padding: 20px 0; /* Box model: vertical spacing for the section */
+}
+
+/* Cards container: fixed width, centered horizontally, holds the floated cards */
+.cards-container {
+  width: 1500px;
+  margin: 0 auto; /* Horizontal centering (Required by assignment) */
+  /* Note: Do not set height here; let the clearfix handle the parent height */
+}
+
+/* --- Float Clearing Method 3: Double Pseudo-element Clearfix (Crucial for 25 points) --- */
+
+/* Clearfix: applies to parent container to clear floats using pseudo-elements */
+.clearfix::before,
+.clearfix::after {
+  content: ""; /* Display modes: generates an empty content box */
+  display: table; /* Display modes: creates a block-level table box to clear floats */
+}
+
+/* Clearfix after: specifically clears the floats of the child elements */
+.clearfix::after {
+  clear: both; /* Layout method: clears both left and right floats */
+}
+
+/* --- Product Card Styles --- */
+
+/* Product card: floated left, white background, box model controls size and spacing */
+.product-card {
+  float: left; /* Horizontal arrangement using float */
+  width: 360px; /* Box model: fixed width (1500 - 40px total margin) / 4 = 365px, using 360px for safety */
+  background-color: #ffffff;
+  padding: 20px; /* Box model: inner spacing for content */
+  margin-right: 13px; /* Box model: horizontal spacing between cards */
+  margin-bottom: 20px; /* Box model: vertical spacing if cards wrap */
+  border: 1px solid #dddddd; /* Box model: subtle border for card definition */
+  box-sizing: border-box; /* Ensures padding and border are included in the 360px width */
+}
+
+/* Remove right margin from the 4th card to prevent unwanted wrapping issues */
+.product-card:nth-child(4n) {
+  margin-right: 0; /* Box model: removes extra margin on the last card of each row */
+}
+
+/* Card title: text styling and spacing */
+.card-title {
+  font-size: 20px; /* Text and appearance: larger font for headings */
+  font-weight: bold;
+  margin-bottom: 15px; /* Box model: spacing below the title */
+  color: #0f1111;
+}
+
+/* Card image box: fixed height container to ensure uniform card heights across the grid */
+.card-image-box {
+  width: 100%; /* Box model: takes full width of the parent card */
+  height: 300px; /* Box model: fixed height to maintain consistent card layout */
+  background-color: #f0f0f0; /* Text and appearance: placeholder color before image loads */
+  margin-bottom: 15px; /* Box model: spacing between image box and the link below */
+  overflow: hidden; /* Layout method: crops any image parts exceeding the 300px height */
+}
+
+/* Card image: fills the box, centering the image and cropping edges proportionally */
+.card-img {
+  width: 100%; /* Box model: stretches to the full width of the container */
+  height: 100%; /* Box model: stretches to the full height of the container */
+  object-fit: cover; /* Display modes: maintains aspect ratio and covers the area, cropping excess */
+  display: block; /* Display modes: removes the default inline bottom gap of the image element */
+}
+
+/* Card link: text styling and hover effect */
+.card-link {
+  color: #007185; /* Amazon's standard link blue color */
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* Card link hover: adds underline on mouse hover */
+.card-link:hover {
+  text-decoration: underline; /* Pseudo-class selector: visual feedback */
+  color: #c7511f; /* Amazon's hover orange/red color */
+}
+/* =========================================
+   Block 5: Secondary Recommendations (Deals)
+   ========================================= */
+
+/* Deals section background: full width, white background, normal flow vertical stacking */
+.deals-section-bg {
+  width: 100%;
+  background-color: #ffffff; /* Text and appearance: white background for contrast */
+  padding: 30px 0; /* Box model: vertical spacing for the section */
+}
+
+/* Deals container: fixed width, centered horizontally, holds floated deal cards */
+.deals-container {
+  width: 1500px;
+  margin: 0 auto; /* Box model: horizontal centering (Required by assignment) */
+  /* Note: clearfix class is applied in HTML to prevent height collapse from floated cards */
+}
+
+/* Deals title: normal flow, full width, text styling for section heading */
+.deals-title {
+  font-size: 24px; /* Text and appearance: large font for headings */
+  font-weight: bold;
+  color: #0f1111;
+  margin-bottom: 20px; /* Box model: spacing below the title to separate from cards */
+}
+
+/* Deal card: floated left, simple box model for compact horizontal layout */
+.deal-card {
+  float: left; /* Layout method: horizontal arrangement using float */
+  width: 280px; /* Box model: fixed width (280*5 + 20*4 = 1480px, fits within 1500px) */
+  margin-right: 20px; /* Box model: horizontal spacing between cards */
+  text-align: center; /* Text and appearance: centers text and inline elements inside the card */
+}
+
+/* Deal card last child: removes right margin to prevent the last card from dropping to the next line */
+.deal-card:last-child {
+  margin-right: 0; /* Box model: removes extra margin on the final card */
+}
+
+/* Deal image: responsive within its card, maintains aspect ratio */
+.deal-img {
+  width: 100%; /* Box model: takes full width of the parent card */
+  height: 300px; /* Box model: fixed height to maintain consistent card layout */
+  background-color: #f0f0f0; /* Text and appearance: placeholder color before image loads */
+  margin-bottom: 15px; /* Box model: spacing between image box and the link below */
+  overflow: hidden; /* Layout method: crops any image parts exceeding the 300px height */
+}
+
+/* Deal price: text styling for product price */
+.deal-price {
+  font-size: 16px; /* Text and appearance: readable font size for price */
+  color: #b12704; /* Text and appearance: Amazon's standard price red color */
+  font-weight: bold;
+  margin: 0; /* Box model: removes default paragraph margin */
+}

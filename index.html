@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Homepage Replication</title>
+    <!-- External stylesheet inclusion: linking to the CSS file inside the css folder -->
+    <link rel="stylesheet" href="css/Amazon.css" />
+  </head>
+  <body>
+    <!-- Block 1: Top navigation bar: full-width dark strip, containing logo, search bar, and cart links. -->
+    <header class="top-nav-bg">
+      <!-- Top nav content: fixed width container, centered horizontally using margin: 0 auto -->
+      <div class="top-nav-content">
+        <!-- Logo area: floated to the left -->
+        <div class="nav-logo">
+          <img src="img/logo.jpg" alt="Amazon Logo" />
+        </div>
+
+        <!-- Search bar area: floated to the left, takes up the middle space -->
+        <div class="nav-search">
+          <input type="text" placeholder="Search Amazon" />
+          <button class="search-btn">Search</button>
+        </div>
+
+        <!-- Cart area: floated to the right -->
+        <div class="nav-cart">
+          <a href="#" class="cart-link">Cart</a>
+        </div>
+      </div>
+    </header>
+    <!-- End of Block 1: Top navigation bar -->
+  </body>
+</html>
+<!-- Block 2: Sub navigation bar: narrower dark strip with category links arranged horizontally. -->
+<nav class="sub-nav-bg">
+  <!-- Sub nav content: fixed width container, centered horizontally -->
+  <div class="sub-nav-content">
+    <ul class="nav-menu">
+      <li class="menu-item"><a href="#" class="menu-link">All</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Today's Deals</a></li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">Customer Service</a>
+      </li>
+      <li class="menu-item"><a href="#" class="menu-link">Registry</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Gift Cards</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Sell</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- End of Block 2: Sub navigation bar -->
+<!-- Block 3: Hero banner: full-width background with centered large promotional image. -->
+<section class="hero-banner-bg">
+  <!-- Hero banner content: fixed width container, centered horizontally -->
+  <div class="hero-banner-content">
+    <!-- Note: Please ensure you have a placeholder image named 'hero-banner.jpg' in your 'img' folder -->
+    <img
+      src="img/hero-banner.jpg"
+      alt="Amazon Hero Banner"
+      class="hero-image"
+    />
+  </div>
+</section>
+<!-- End of Block 3: Hero banner -->
+<!-- Block 4: Product cards grid: 4 cards arranged horizontally using float, placed on a light gray background. -->
+<section class="cards-section-bg">
+  <!-- Cards container: fixed width, centered, applies clearfix to prevent height collapse -->
+  <div class="cards-container clearfix">
+    <!-- Product Card 1 -->
+    <div class="product-card">
+      <h3 class="card-title">Electronics & Accessories</h3>
+      <div class="card-image-box">
+        <img
+          src="img/card1.jpg"
+          alt="Electronics Placeholder"
+          class="card-img"
+        />
+      </div>
+      <a href="#" class="card-link">See more</a>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div class="product-card">
+      <h3 class="card-title">Home & Kitchen</h3>
+      <div class="card-image-box">
+        <img
+          src="img/card2.jpg"
+          alt="Home & Kitchen Placeholder"
+          class="card-img"
+        />
+      </div>
+      <a href="#" class="card-link">See more</a>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div class="product-card">
+      <h3 class="card-title">Fashion & Apparel</h3>
+      <div class="card-image-box">
+        <img src="img/card3.jpg" alt="Fashion Placeholder" class="card-img" />
+      </div>
+      <a href="#" class="card-link">See more</a>
+    </div>
+
+    <!-- Product Card 4 -->
+    <div class="product-card">
+      <h3 class="card-title">Health & Personal Care</h3>
+      <div class="card-image-box">
+        <img src="img/card4.jpg" alt="Health Placeholder" class="card-img" />
+      </div>
+      <a href="#" class="card-link">See more</a>
+    </div>
+  </div>
+</section>
+<!-- End of Block 4: Product cards grid -->
+<!-- Block 5: Secondary recommendations: full-width light background with a section title and horizontally floated deal cards. -->
+<section class="deals-section-bg">
+  <!-- Deals container: fixed width, centered, holds the floated deal cards and applies clearfix -->
+  <div class="deals-container clearfix">
+    <!-- Section title: normal flow, full width, introduces the deals section -->
+    <h2 class="deals-title">Deals related to items you've viewed</h2>
+
+    <!-- Deal Card 1: floated left, contains image and price -->
+    <div class="deal-card">
+      <img src="img/deal1.jpg" alt="Deal Product 1" class="deal-img" />
+      <p class="deal-price">$50</p>
+    </div>
+
+    <!-- Deal Card 2 -->
+    <div class="deal-card">
+      <img src="img/deal2.jpg" alt="Deal Product 2" class="deal-img" />
+      <p class="deal-price">$90</p>
+    </div>
+
+    <!-- Deal Card 3 -->
+    <div class="deal-card">
+      <img src="img/deal3.jpg" alt="Deal Product 3" class="deal-img" />
+      <p class="deal-price">$410</p>
+    </div>
+
+    <!-- Deal Card 4 -->
+    <div class="deal-card">
+      <img src="img/deal4.jpg" alt="Deal Product 4" class="deal-img" />
+      <p class="deal-price">$699</p>
+    </div>
+
+    <!-- Deal Card 5: last child, right margin will be removed via CSS -->
+    <div class="deal-card">
+      <img src="img/deal5.jpg" alt="Deal Product 5" class="deal-img" />
+      <p class="deal-price">$899</p>
+    </div>
+  </div>
+</section>
+<!-- End of Block 5: Secondary recommendations -->
